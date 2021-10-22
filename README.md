@@ -11,7 +11,7 @@ Compétences évaluées :
 
 ---
 
-Clonez le repo :
+Clonez le repo : `https://github.com/JeremyMeed/JeremyMedana_7_04102021`
 
 #### Pour lancer le frontend :
 
