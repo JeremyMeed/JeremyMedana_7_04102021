@@ -15,17 +15,20 @@
         <button
           type="button"
           @click="displayModal"
-          class="bg-gray-200 shadow-md hover:shadow-xl px-8 py-4 rounded-xl"
+          class="bg-gray-200 shadow-md hover:shadow-xl hover:bg-gray-300 px-8 py-4 rounded-xl"
         >
           <div>
             <h2 class="text-center">
               Bonjour {{ user.username }} ! <br />Quoi de neuf en ce
               {{ dayName }} ?
             </h2>
+            <p class="italic text-red-900 text-xs font-thin">
+              Cliquez pour créer votre post
+            </p>
           </div>
 
           <post-modal v-show="showModal" @close="closeModal" />
-          <!-- Le composant modal s'affiche au click -->
+          <!-- Le composant modal s'affiche au clic -->
         </button>
       </div>
 

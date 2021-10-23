@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt"); // Bcrypt permet de crypter le password et de 
 const jwt = require("jsonwebtoken"); // Jwt necessaire pour la création d'un token
 const fs = require("fs"); // FS est un module de Node permettant les opérations sur les fichiers
 
-
 // Gestion de la création d'un utilisateur et cryptage du mot de passe  ---------------------------------------------------------------
 exports.signup = (req, res, next) => {
   bcrypt
@@ -151,7 +150,8 @@ exports.deleteUser = (req, res, next) => {
           db.User.destroy({ where: { id: req.params.id } });
           res.status(200).json({ message: "Compte supprimé !" });
         });
-      } else { // Sinon on supprime uniquement l'user
+      } else {
+        // Sinon on supprime uniquement l'user
         db.User.destroy({ where: { id: req.params.id } });
         res.status(200).json({ message: "Compte supprimé !" });
       }

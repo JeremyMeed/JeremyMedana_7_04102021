@@ -265,7 +265,7 @@ const store = createStore({
       });
     },
 
-    // Suppresion d'un user--------------------------------------------------------------------------------
+    // Suppression d'un user--------------------------------------------------------------------------------
     deleteOneUser: ({ commit }, id) => {
       return new Promise((resolve, reject) => {
         userService
@@ -307,7 +307,7 @@ const store = createStore({
               const posts = response.data;
               console.log(posts);
               commit("GET_POSTS", posts);
-              location.reload(false);
+              //location.reload(false);
               resolve(response.data);
             });
           })

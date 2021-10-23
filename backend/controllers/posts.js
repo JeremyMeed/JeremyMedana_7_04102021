@@ -45,7 +45,7 @@ exports.getOnePost = (req, res, next) => {
     where: {
       id: req.params.id,
     },
-    // On inclue également les infos user, like, comment, liées au post, qui nous serons utiles 
+    // On inclue également les infos user, like, comment, liées au post, qui nous serons utiles
     include: [
       {
         model: db.User,
@@ -131,7 +131,7 @@ exports.getAllPosts = (req, res, next) => {
 exports.updatePost = async (req, res, next) => {
   let newImageUrl;
   let post = await db.Post.findOne({ where: { id: req.params.id } });
-  // Await important ! findOne doit s'éxécuter AVANT post.imageURL !
+  // Await important ! findOne doit s'exécuter AVANT post.imageURL !
 
   // Si nouvelle image celle ci est enregistrée
   if (req.file) {
@@ -191,7 +191,8 @@ exports.deletePost = (req, res, next) => {
           );
           res.status(200).json({ message: "Post supprimé !" });
         });
-      } else { // Sinon on supprime uniquement le post
+      } else {
+        // Sinon on supprime uniquement le post
         db.Post.destroy(
           { where: { id: post.id } },
           { truncate: true, restartIdentity: true }
